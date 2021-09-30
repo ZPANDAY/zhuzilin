@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.a {
+				width: 500px;
+				height: 500px;
+				border: 2px solid black;
+				border-radius: 50%;
+				position: absolute;/* 绝对定位 */
+				top: 100px;
+				left: 400px;
+				animation: x;            /* 动画 */
+				animation-duration: 5s;    /* 一周所需时间 */
+				animation-timing-function: linear;   /* 匀速旋转 */
+				animation-delay: 2s;     /* 延迟时间 */
+				animation-iteration-count: infinite;   /* 循环迭代 */
+			}
+			.a1{
+				width: 200px;
+				height: 200px;
+				background: red;
+				position: absolute;
+				border-radius: 50%;
+				top: 150px;
+				left: 150px;
+				box-shadow:0px 0px 10px #FF0000;    /* 阴影 */
+			}
+			.a2{
+				width: 200px;
+				height: 200px;
+				border: 2px solid black;
+				position: absolute;
+				border-radius: 50%;
+				top:-100px;
+				left: 200px;
+				animation: x;
+				animation-duration: 5s;
+				animation-timing-function: linear;
+				animation-delay: 2s;
+				animation-iteration-count: infinite;
+			}
+			.a3{
+				width: 50px;
+				height: 50px;
+				background: green;
+				position: absolute;
+				border-radius: 50%;
+				top: 75px;
+				left: 80px;
+			}
+			.a4{
+				width: 30px;
+				height: 30px;
+				background: blue;
+				position: absolute;
+				border-radius: 50%;
+				top: 185px;
+				left: 80px;
+			}
+			/* 插入动画X的关键帧 */
+			@keyframes x{
+				from{transform: rotate(0deg);}
+				to{transform: rotate(360deg);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="a">
+			<div class="a1"></div>
+			<div class="a2">
+				<div class="a3"></div>
+				<div class="a4"></div>
+			</div>
+		</div>
+	</body>
+</html>
