@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>作业</title>
+		<style>
+			table {
+				margin: 20px auto;
+				border-collapse: collapse;
+			}
+
+			td {
+				padding: 2px;
+				border: 2px solid #000000;
+			}
+
+			p {
+				text-align: center;
+			}
+
+			h2 {
+				border-bottom: 2px solid black;
+			}
+		</style>
+	</head>
+
+	<body>
+		<h2>9x9</h2>
+		<table class="task1"></table>
+		<h2>12x
+		</h2>
+		<table class="task2"></table>
+		<h2>0-99</h2>
+		<p class="task3"></p>
+		<h2>1-100，输出ABC个数</h2>
+		<p class="task4"></p>
+		<h2>三目运算嵌套和转换字符串</h2>
+		<p class="task5"></p>
+		<script>
+			let task1 = document.getElementsByClassName('task1')[0];
+			let row, col;
+			row = col = 9;
+
+			for (let i = 1; i <= row; i++) {
+				let tr = document.createElement('tr');
+				for (let j = 1; j <= col; j++) {
+					let td = document.createElement('td');
+
+					if (j <= i) {
+						td.textContent = j + '×' + i + '=' + i * j;
+					}
+
+					tr.appendChild(td);
+				}
+
+				task1.appendChild(tr);
+			}
+
+			let task2 = document.getElementsByClassName('task2')[0];
+			row = col = 12;
+
+			for (let i = -1; i <= row; i++) {
+				let tr = document.createElement('tr');
+				for (let j = -1; j <= col; j++) {
+					let td = document.createElement('td');
+
+					if (i === -1) {
+
+						td.textContent = j === -1 ? 'x' : j;
+					} else {
+
+						td.textContent = j === -1 ? i : i * j;
+					}
+
+					tr.appendChild(td);
+				}
+				task2.appendChild(tr);
+			}
+
+
+			let task3 = document.querySelector('.task3');
+			for (let i = 0; i < 100; i++) {
+
+				(i % 10 === 0 && i !== 0) ? task3.innerHTML += `<br>`: '';
+
+				task3.innerHTML += i < 10 ? '0' + i : i;
+
+				task3.innerHTML += ' ';
+			}
+
+
+			let task4 = document.querySelector('.task4');
+			let [countA, countB, countC] = [0, 0, 0];
+			for (let i = 1; i <= 100; i++) {
+				task4.innerHTML += i;
+				if (i % 3 === 0) {
+					task4.innerHTML += 'A';
+					countA++;
+				}
+				if (i % 5 === 0) {
+					task4.innerHTML += 'B';
+					countB++;
+				}
+				if (i % 3 === 0 && i % 5 === 0) {
+					task4.innerHTML += 'C';
+					countC++;
+				}
+
+				task4.innerHTML += ' ';
+			}
+
+			task4.innerHTML += `<br>A有${countA}个，B有${countB}个，C有${countC}个`;
+
+
+			let task5 = document.querySelector('.task5');
+
+			let [a, b] = [9, 6];
+			task5.innerHTML = (a > b) ? 'a大于b' : (a < b) ? 'a小于b' : 'a等于b';
+
+
+			[a, b] = [1, 2];
+			let c = '' + a + b;
+
+
+
+
+			task5.innerHTML += '<br>c = ' + c;
+		</script>
+	</body>
+</html>
