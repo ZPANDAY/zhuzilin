@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			document.write('<h1>2练习1</h1>');
+			let a = 12;
+			let b = 10;
+			if (a > b) {
+				document.write('a大于b');
+			} else if (a === b) {
+				document.write('a等于b');
+			} else if (a < b) {
+				document.write('a小于b');
+			}
+			document.write('<hr>');
+			document.write('<h1>2练习2</h1>');
+			let c = 15;
+			if (c % 5 == 0) {
+				document.write('可以被5整除' + ' ' + c / 5);
+			} else {
+				document.write('不可以被5整除')
+			}
+			document.write('<hr>');
+			document.write('<h1>2练习3</h1>');
+			document.write('100以内偶数：')
+			for (let d = 0; d <= 100; d++) {
+				if (d % 2 == 0) {
+					document.write('  ' + d);
+				}
+			}
+			document.write('<hr>');
+			document.write('<h1>2练习4</h1>');
+			document.write('100以内七的倍数：')
+			let q = 0;
+			while (q <= 100) {
+				if (q % 7 == 0) {
+					document.write('  ' + q);
+				}
+				q++;
+			}
+			document.write('<hr>');
+			document.write('<h1>2练习5</h1>');
+			let w = 13;
+			let e = 2;
+			let r = 3;
+			if (w > e || w > r) {
+				document.write('a最大,a的值为：' + w);
+			} else if (e > r) {
+				document.write('b最大,b的值为：' + e);
+			} else {
+				document.write('c最大,c的值为：' + r);
+			}
+			document.write('<hr>');
+			document.write('<h1>3练习1</h1>');
+			document.write('偶 奇')
+			for (let o = 0; o <= 100; o++) {
+				if (o % 2 == 0) {
+					document.write('<br>' + o);
+				} else {
+					document.write('&nbsp;&nbsp;' + o);
+				}
+			}
+			document.write('<hr>');
+			document.write('<h1>3练习2<h1>')
+			document.write('<button id="button4">求数组的和</button>');
+			const button4 = document.getElementById('button4');
+			button4.addEventListener('click', max);
+
+			function max() {
+				let test = prompt('请输入数组');
+				let shuzu = test.split(',');
+				// console.log(shuzu);
+				let summm = 0;
+				for (h = 0; h <= shuzu.length - 1; h++) {
+					summm += Number(shuzu[h]);
+				}
+				document.write('输入的数组之和为' + summm + '');
+			}
+			document.write('<hr/>');
+			document.write('<h1>3练习3<h1>')
+			document.write('<input type="text" id="input1"><br/>');
+			document.write('<input type="text" id="input2">');
+			document.write('<button id="button6">比较</button><br/>');
+			const button6 = document.getElementById('button6');
+			const input1 = document.getElementById('input1');
+			const input2 = document.getElementById('input2');
+			button6.addEventListener('click', dayijia);
+
+			function dayijia() {
+				if (isNaN(input1.value) || isNaN(input2.value)) {
+					alert('请输入数字');
+				} else {
+					if (input1.value > input2.value) {
+						alert('a的数值大');
+					} else if (input2.value > input1.value) {
+						alert('b的数值大');
+					}
+					 else {
+						alert('a,b值相等');
+					}
+				}
+			}
+		</script>
+	</body>
+</html>
